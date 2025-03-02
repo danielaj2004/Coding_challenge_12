@@ -57,3 +57,19 @@ document.getElementById("addProductButton").addEventListener("click", () => {
 
 addProductItem("office chair");
 addProductItem("desk");//adding products as examples
+
+// Task 4 business customer section
+const customerSection = document.getElementById("customerSection");
+
+customerSection.addEventListener("click", () => {
+  console.log("Has been selected");
+}); // adding a click event listener
+
+const customerCards = document.querySelectorAll(".customer-card");
+customerCards.forEach((card) => {
+  card.style.backgroundColor = "purple";
+  card.addEventListener("click", (event) => {
+    console.log("Has been selected");
+    event.stopPropagation();
+  });
+});
