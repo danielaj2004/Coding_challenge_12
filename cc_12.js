@@ -17,3 +17,15 @@ revenueCard.innerHTML = `
 
 // append new card
 dashboardId.appendChild(revenueCard);
+
+//Task 2 updating dashboard metrics
+const metricCards = document.querySelectorAll(".metric-card");
+
+// converting into an array
+const metricCardsArray = [...metricCards];
+
+// updating each cards text
+metricCardsArray.forEach(card => {
+  card.innerText += ' - Updated';
+  card.style.backgroundColor = 'orange'; 
+}); // Adding a background color
