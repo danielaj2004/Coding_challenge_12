@@ -29,3 +29,31 @@ metricCardsArray.forEach(card => {
   card.innerText += ' - Updated';
   card.style.backgroundColor = 'orange'; 
 }); // Adding a background color
+
+//Task 3 dynamic inventory
+function addProductItem(productName) {
+  const inventoryList = document.getElementById("inventoryList");
+  const newProductItem = document.createElement("li");
+
+  newProductItem.setAttribute("class", "product-item");
+  newProductItem.setAttribute("data-product", productName);
+  newProductItem.innerText = productName;
+
+  newProductItem.addEventListener("click", () => {
+    removeProductItem(newProductItem);
+  });
+
+  inventoryList.appendChild(newProductItem);
+};// adding a click event to removes items when selected
+
+function removeProductItem(item) {
+  const inventoryList = document.getElementById("inventoryList");
+  inventoryList.removeChild(item);
+};// function for removing roduct items
+
+document.getElementById("addProductButton").addEventListener("click", () => {
+  addProductItem("New Product");
+}) // added event listener to "add product" button
+
+addProductItem("office chair");
+addProductItem("desk");//adding products as examples
